@@ -1,0 +1,9 @@
+<h1>Welcome to <%= @billboard.name %></h1>
+
+<%= link_to 'Back to All Billboards', billboards_path, class: "btn btn-primary" %>
+<%= link_to 'Edit Billboard', billboard_path(@billboard), class: "btn btn-warning" %>
+<%= link_to 'Delete', billboard_path(@billboard), method: :delete, class: "btn btn-danger" %>
+<hr>
+<%= link_to 'Add a song', new_billboard_song_path %>
+
+<!-- <%= render '/songs/all_songs' %> -->

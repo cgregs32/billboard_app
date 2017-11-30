@@ -1,0 +1,11 @@
+<div class="container">
+  <%= form_for [@billboard, @song] do |f| %>
+
+    <%= f.label :name %>
+    <%= f.text_field :name, required: true, autofocus: true %>
+    <br>
+    <%= f.label :rank %>
+    <%= f.text_area :rank , required: true%>
+    <%= f.submit %>
+  <% end %>
+</div>

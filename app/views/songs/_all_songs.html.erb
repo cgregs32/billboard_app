@@ -1,0 +1,6 @@
+<div class="container">
+  <%= @songs.each do |song| %>
+    <p>Song: <%= song.name %></p>
+    <p>Rank: <%= song.rank %></p>
+  <% end %>
+</div>

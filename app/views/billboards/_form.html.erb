@@ -1,0 +1,9 @@
+<div class="container">
+
+  <%= form_for @billboard do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name, required: true %>
+    <%= f.submit class: "btn btn-primary" %>
+  <% end %>
+
+</div>

@@ -1,0 +1,10 @@
+<h1>All Billboards!</h1>
+
+<%= link_to "Create New Billboard", new_billboard_path, class: "btn btn-primary" %>
+<br>
+<div class="container">
+  <% @billboards.each do |bill| %>
+    <%= link_to bill.name, billboard_path(bill)%>
+    <br>
+  <% end %>
+</div>
