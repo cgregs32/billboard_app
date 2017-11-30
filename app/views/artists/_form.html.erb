@@ -1,0 +1,25 @@
+<div class="container">
+
+ <h1><%= @artist.id? ? 'Edit' : 'Create' %></h1>
+
+ <%= form_for @artist do |f| %>
+    <div class="form-group row">
+      <div class="col-xs-4">
+        <%= f.label :name %>
+        <%= f.text_field :name, required: true %>
+      </div>
+      <div class="col-xs-4">
+        <%= f.label :genre %>
+        <%= f.text_field :genre, required: true %>
+      </div>
+    </div>
+    <%= f.submit class: 'btn btn-primary' %>
+  <% end %>
+
+ <% if @artist.id? %>
+    <%= link_to 'Cancel', artist_path(@artist) %>
+  <% else %>
+    <%= link_to 'Cancel', artists_path %>
+  <% end %>
+
+</div>

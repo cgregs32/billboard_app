@@ -19,11 +19,9 @@ class BillboardsController < ApplicationController
   end
 
   def show
-
   end
 
   def edit
-
   end
 
   def update
@@ -37,6 +35,25 @@ class BillboardsController < ApplicationController
   def destroy
     @billboard.destroy
     redirect_to billboards_path
+  end
+
+  def find_song
+    @billboard = Billboard.find(params[:id])
+    @songs = Song.where('billboard_id IS ?', nil)
+  end
+
+  def add_song
+    @billboard = Billboard.find(params[:id])
+    @song = Song.find(params[:format])
+    @song.update(billboard_id: params[:id])
+    redirect_to billboard_path(@billboard)
+  end
+
+  def remove_from_bill
+    @billboard = Billboard.find(params[:id])
+    @song = Song.find(params[:song_id])
+    @song.update(billboard_id: nil)
+    redirect_to billboard_path(@billboard)
   end
 
   private

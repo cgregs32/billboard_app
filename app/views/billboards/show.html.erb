@@ -4,6 +4,17 @@
 <%= link_to 'Edit Billboard', billboard_path(@billboard), class: "btn btn-warning" %>
 <%= link_to 'Delete', billboard_path(@billboard), method: :delete, class: "btn btn-danger" %>
 <hr>
-<%= link_to 'Add a song', new_billboard_song_path %>
 
-<!-- <%= render '/songs/all_songs' %> -->
+<div class="container">
+   <h2>All Songs</h2>
+   <% @billboard.songs.each do |song| %>
+    <p>
+      Title: <%= song.name %> <%= link_to 'Remove From List', remove_song_path(@billboard, song), method: :patch, class: "btn btn-warning"  %>
+    </p>
+   <% end %>
+  <hr>
+   <%= link_to 'Add Song to Billboard', find_song_path, class: "btn btn-success" %>
+</div>
+ <br>
+
+<%= link_to 'View Artists', artists_path %>

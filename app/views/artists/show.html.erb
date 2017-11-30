@@ -1,0 +1,21 @@
+<div class="container">
+
+ <h1>Name: <%= @artist.name %></h1>
+  <h2>Genre: <%= @artist.genre %></h2>
+
+ <% @artist.songs.each do |song| %>
+    <p>
+      Title: <%= song.name %>
+    </p>
+  <% end %>
+
+ <%= link_to 'Add Song', new_artist_song_path(@artist) %>
+
+ <hr>
+
+ <%= link_to 'Back', artists_path, class: 'btn btn-primary' %>
+  <%= link_to 'Edit', edit_artist_path, class: 'btn btn-info' %>
+  <%= link_to 'Delete Artist', artist_path(@artist), method: :delete,
+                                                              data: { confirm: 'Are you sure?'},
+                                                              class: 'btn btn-danger' %>
+</div>

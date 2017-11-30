@@ -1,0 +1,15 @@
+<div class="container">
+
+ <h1>All Artists</h1>
+
+ <% if @artists.any? %>
+    <% @artists.each do |artist| %>
+    <%= link_to artist.name, artist_path(artist.id) %>
+    <hr>
+    <% end %>
+  <% end %>
+
+ <%= link_to 'Create New Artist', new_artist_path, class: 'btn btn-info' %>
+  <%= link_to 'Back', billboards_path, class: 'btn btn-primary' %>
+
+</div>

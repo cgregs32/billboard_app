@@ -1,0 +1,11 @@
+<div class="container">
+  <h2>Songs</h2>
+  <% @songs.each do |song| %>
+    <p>
+      <%= song.name %>
+      <%= link_to 'Add Song', add_song_path(@billboard, song),
+                  method: :patch, class: "btn btn-info" %>
+    </p>
+  <% end %>
+  <hr>
+</div>
