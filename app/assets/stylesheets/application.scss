@@ -1,3 +1,22 @@
+@import 'semantic-ui';
+@import 'static_pages';
+@import 'animate';
 
- @import "bootstrap-sprockets";
- @import "bootstrap";
+
+.billboard{
+  height: 100px;
+  h1{
+    text-align: center;
+    font-size: 60px;
+  }
+}
+
+body{
+  background-color: #A0CED9;
+}
+.container{
+  padding-top: 50px;
+}
+.menu{
+  background-color: #ADF7B6;
+}

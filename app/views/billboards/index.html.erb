@@ -1,10 +1,25 @@
-<h1>All Billboards!</h1>
+<%= render '/shared/nav' %>
+<div class="ui container billboard">
+  <div>
+    <h1>The Best Billboards!</h1>
+  </div>
 
-<%= link_to "Create New Billboard", new_billboard_path, class: "btn btn-primary" %>
-<br>
-<div class="container">
-  <% @billboards.each do |bill| %>
-    <%= link_to bill.name, billboard_path(bill)%>
-    <br>
-  <% end %>
+  <div class="ui grid">
+    <div class="sixteen wide computer column center aligned">
+      <%= link_to "Create A New Billboard Today", new_billboard_path, class: "ui blue basic button" %>
+    </div>
+  </div>
+
+
+  <div class="ui grid">
+    <% @billboards.each do |bill| %>
+      <div class="sixteen wide mobile eight wide tablet four wide computer column">
+        <div class="ui card billboard">
+
+          <%= link_to bill.name, billboard_path(bill), class: "ui green button"%>
+          Contribute to this list!
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>

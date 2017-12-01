@@ -3,7 +3,6 @@ class SongsController < ApplicationController
 
   def new
     @song = Song.new
-    render partial: 'form'
   end
 
   def create
@@ -30,7 +29,7 @@ class SongsController < ApplicationController
 
   def destroy
   end
-  
+
   private
 
     def find_artist

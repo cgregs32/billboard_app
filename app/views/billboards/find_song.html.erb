@@ -1,11 +1,37 @@
+
+
 <div class="container">
-  <h2>Songs</h2>
-  <% @songs.each do |song| %>
-    <p>
-      <%= song.name %>
-      <%= link_to 'Add Song', add_song_path(@billboard, song),
-                  method: :patch, class: "btn btn-info" %>
-    </p>
-  <% end %>
-  <hr>
+  <div class"ui grid">
+    <h2>Pick From these Songs</h2>
+    <div class "sixteen wide computer column">
+      <div class="ui cards">
+
+
+        <% @songs.each do |song| %>
+        <div class="card">
+          <div class="content">
+            <div class="header">
+
+              Track:
+
+            </div>
+
+            <div class="description">
+
+              <%= song.name %>
+
+            </div>
+          </div>
+          <div class="extra content">
+
+
+            <%= link_to 'Add Song', add_song_path(@billboard, song),
+                        method: :patch, class: "ui purple basic button" %>
+
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>

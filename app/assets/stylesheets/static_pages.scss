@@ -1,0 +1,20 @@
+#landing{
+  display: flex;
+
+  background: url("landing_img.jpg") center center;
+  background-size: cover;
+  height: 100vh;
+  max-width: 100%;
+
+  h1{
+    align-self: center;
+    font-size: 60px;
+    font-weight: 800px;
+  }
+}
+
+.wrapper{
+  align-self: center;
+  margin-left: 2em;
+  padding-bottom: 30%;
+}

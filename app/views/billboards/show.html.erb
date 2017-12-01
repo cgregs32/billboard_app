@@ -1,20 +1,45 @@
-<h1>Welcome to <%= @billboard.name %></h1>
+<%= render '/shared/nav' %>
 
-<%= link_to 'Back to All Billboards', billboards_path, class: "btn btn-primary" %>
-<%= link_to 'Edit Billboard', billboard_path(@billboard), class: "btn btn-warning" %>
-<%= link_to 'Delete', billboard_path(@billboard), method: :delete, class: "btn btn-danger" %>
-<hr>
 
-<div class="container">
-   <h2>All Songs</h2>
-   <% @billboard.songs.each do |song| %>
-    <p>
-      Title: <%= song.name %> <%= link_to 'Remove From List', remove_song_path(@billboard, song), method: :patch, class: "btn btn-warning"  %>
-    </p>
-   <% end %>
+<div class="ui container">
+  <h1>Welcome to <%= @billboard.name %></h1>
+
+  <div class="ui two buttons">
+    <%= link_to 'Edit Billboard', edit_billboard_path(@billboard), class: "ui teal simple button" %>
+    <%= link_to 'Delete', billboard_path(@billboard), method: :delete, class: "ui red simple button" %>
+  </div>
+
   <hr>
-   <%= link_to 'Add Song to Billboard', find_song_path, class: "btn btn-success" %>
-</div>
- <br>
 
-<%= link_to 'View Artists', artists_path %>
+  <div class="ui container">
+    <div class"ui grid">
+      <h2>All Songs</h2>
+      <div class "sixteen wide computer column">
+        <div class="ui cards">
+          <% @billboard.songs.each do |song| %>
+
+          <div class="card">
+            <div class="content">
+              <div class="header">
+                Track:
+              </div>
+
+              <div class="description">
+                <%= song.name %>
+              </div>
+            </div>
+            <div class="extra content">
+              <%= link_to 'Remove From List', remove_song_path(@billboard, song), method: :patch, class: "ui orange button"  %>
+            </div>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+   <%= link_to 'Add Song to Billboard', find_song_path, class: "ui teal button" %>
+   <br>
+   <%= link_to 'View Artists', artists_path, class: "ui blue button" %>
+</div>

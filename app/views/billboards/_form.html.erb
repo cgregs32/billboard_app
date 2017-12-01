@@ -1,9 +1,13 @@
 <div class="container">
 
-  <%= form_for @billboard do |f| %>
+
+  <%= form_for @billboard, class: 'ui form' do |f| %>
+  <div class="field">
     <%= f.label :name %>
     <%= f.text_field :name, required: true %>
-    <%= f.submit class: "btn btn-primary" %>
+  </div>
+
+    <%= f.submit class: "ui violet basic button"  %>
   <% end %>
 
 </div>

@@ -1,4 +1,6 @@
-<div class="container">
+<%= render '/shared/nav' %>
+
+<div class="ui container">
 
  <h1>All Artists</h1>
 
@@ -10,6 +12,6 @@
   <% end %>
 
  <%= link_to 'Create New Artist', new_artist_path, class: 'btn btn-info' %>
-  <%= link_to 'Back', billboards_path, class: 'btn btn-primary' %>
+  <%= link_to 'Back', billboards_path(@billboard), class: 'btn btn-primary' %>
 
 </div>

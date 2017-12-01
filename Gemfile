@@ -5,13 +5,16 @@ ruby '2.3.1'
 gem 'rails', '~> 5.1.4'
 gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.7'
-gem 'bootstrap-sass', '~> 3.3.6'
+gem 'semantic-ui-sass'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'turbolinks', '~> 5'
 gem 'faker', '~> 1.8.4'
 gem 'will_paginate', '~> 3.1.0'
 gem 'coffee-script', '~> 2.4', '>= 2.4.1'
+gem 'animate.css-rails', '~> 3.2.0'
+gem 'jquery-rails'
+
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
